@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t 131231231231312312/kuber-docker -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true 131231231231312312/kuber-docker npm run test
